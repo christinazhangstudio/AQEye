@@ -26,6 +26,7 @@ class CityAQI {
       //print(data);
 
       //get properties from data
+      city = city;
       time = data['data']['time']['s'];
       aqi = data['data']['aqi'];
 
