@@ -10,13 +10,13 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   //represents CityAQI data
-  Map data = {};
+  //Map data = {};
   @override
   Widget build(BuildContext context) {
     //receive arguments from setupCityAQI() in loading.dart
-    data = data.isNotEmpty
+    /*data = data.isNotEmpty
         ? data
-        : ModalRoute.of(context)!.settings.arguments as Map;
+        : ModalRoute.of(context)!.settings.arguments as Map;*/
     //print(data);
 
     //set background
@@ -33,7 +33,7 @@ class _HomeState extends State<Home> {
             onPressed: () {
               //
             }),
-        title: Text("THIS CITY"),
+        title: Text("AQI Visualizer"),
         actions: <Widget>[
           IconButton(
               icon: Icon(FontAwesomeIcons.magnifyingGlass),
@@ -65,7 +65,13 @@ class _HomeState extends State<Home> {
                   point: LatLng(30.0, -118.0),
                   builder: (ctx) => Container(
                     child: IconButton(
-                      onPressed: () {},
+                      //send to screen for this city that displays specific information
+                      //don't need to send back data from that screen to this one
+                      //do need to pass this city...
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/loading',
+                            arguments: {'city': 'Houston'});
+                      },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
                         color: Color(0xff6200ee),

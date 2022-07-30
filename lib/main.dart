@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:backyard_hacks/pages/choose_location.dart';
+import 'package:backyard_hacks/pages/city_info.dart';
 import 'package:backyard_hacks/pages/home.dart';
 import 'package:backyard_hacks/pages/loading.dart';
-import 'package:backyard_hacks/pages/choose_location.dart';
 
-void main() => runApp(MaterialApp(
-      initialRoute: '/',
-      routes: {
-        '/': (context) => Loading(),
-        '/home': (context) => Home(),
-        '/location': (context) => ChooseLocation(),
-      },
-    ));
+void main() => runApp(
+      MaterialApp(
+        initialRoute: '/',
+        routes: {
+          '/': (context) => Home(),
+          //'/loading': (context) => Loading(),
+          '/city_info': (context) => CityInfo(),
+        },
+        onGenerateRoute: (RouteSettings settings) {
+          print('receiving argument to load ${settings.arguments}');
+          var routes = <String, WidgetBuilder>{
+            '/loading': (context) => Loading(settings.arguments as Map),
+          };
+          WidgetBuilder? builder = routes[settings.name];
+          return MaterialPageRoute(builder: (context) => builder!(context));
+        },
+      ),
+    );
