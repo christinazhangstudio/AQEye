@@ -83,6 +83,22 @@ class _CityInfoState extends State<CityInfo> {
               ),
             ),
           ),
+          Card(
+            child: SizedBox(
+              height: 50,
+              child: ElevatedButton.icon(
+                onPressed: () {
+                  // Respond to button press
+                  Navigator.pushNamed(context, '/resources');
+                },
+                icon: const Icon(FontAwesomeIcons.bullhorn, size: 30),
+                label: const Text(
+                  "Report concern or find resources",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+            ),
+          ),
           Center(
             child: Padding(
               padding: EdgeInsets.only(top: 20, bottom: 10),

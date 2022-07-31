@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:backyard_hacks/pages/city_info.dart';
 import 'package:backyard_hacks/pages/home.dart';
 import 'package:backyard_hacks/pages/loading.dart';
+import 'package:backyard_hacks/pages/resources.dart';
 
 void main() => runApp(
       MaterialApp(
@@ -10,6 +11,7 @@ void main() => runApp(
           '/': (context) => Home(),
           //'/loading': (context) => Loading(),
           '/city_info': (context) => CityInfo(),
+          '/resources': (context) => Resources(),
         },
         onGenerateRoute: (RouteSettings settings) {
           print('receiving argument to load ${settings.arguments}');
