@@ -28,19 +28,20 @@ class _HomeState extends State<Home> {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 16, 137, 146),
         leading: IconButton(
-            icon: Icon(FontAwesomeIcons.arrowLeft),
+            icon: Icon(FontAwesomeIcons.eye),
             onPressed: () {
               //
             }),
         title: Text("AQI Visualizer"),
-        actions: <Widget>[
+        /*actions: <Widget>[
           IconButton(
               icon: Icon(FontAwesomeIcons.magnifyingGlass),
               onPressed: () {
                 //
               }),
-        ],
+        ],*/
       ),
       body: FlutterMap(
           options: MapOptions(
@@ -74,13 +75,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(29.4252, -98.4946),
@@ -95,13 +96,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                              Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(41.90, -87.63),
@@ -116,13 +117,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                              Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(40.71, -74.0),
@@ -137,13 +138,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                              Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(33.448, -112.0741),
@@ -158,13 +159,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                            Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(33.448, -112.0741),
@@ -179,13 +180,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                          Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(33.448, -112.0741),
@@ -200,13 +201,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                          Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(30.332, -81.6557),
@@ -221,13 +222,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                         Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(47.606, -122.332),
@@ -242,13 +243,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                               Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(32.715, -117.161),
@@ -263,13 +264,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                           Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(37.6872, -97.3301),
@@ -284,13 +285,13 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-                                                                                                   Marker(
+                Marker(
                   width: 80.0,
                   height: 80.0,
                   point: LatLng(42.3314, -83.045),
@@ -305,13 +306,12 @@ class _HomeState extends State<Home> {
                       },
                       icon: const Icon(
                         FontAwesomeIcons.locationDot,
-                        color: Color(0xff6200ee),
+                        color: Color.fromARGB(255, 16, 137, 146),
                         size: 45.0,
                       ),
                     ),
                   ),
                 ),
-              
               ],
             ),
           ]),

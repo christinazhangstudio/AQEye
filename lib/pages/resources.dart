@@ -15,8 +15,8 @@ class Resources extends StatelessWidget {
               //return to city screen
               Navigator.pop(context);
             }),
-        backgroundColor: Colors.blue[900],
-        title: const Text('City AQI Data'),
+        backgroundColor: Color.fromARGB(255, 16, 137, 146),
+        title: const Text('Resources'),
         centerTitle: true,
         elevation: 0,
       ),
@@ -28,11 +28,11 @@ class Resources extends StatelessWidget {
             child: Container(
               height: 50,
               //show AQI, TODO: change color?
-              color: const Color.fromARGB(255, 180, 180, 180),
+              color: Color.fromARGB(255, 223, 223, 223),
               child: const Center(
                 child: Text(
-                  'Resources',
-                  style: TextStyle(fontSize: 40),
+                  'Suggested organizations to follow and contact:',
+                  style: TextStyle(fontSize: 15),
                 ),
               ),
             ),
