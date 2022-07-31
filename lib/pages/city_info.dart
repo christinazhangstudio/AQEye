@@ -1,3 +1,7 @@
+// ignore_for_file: curly_braces_in_flow_control_structures
+
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:backyard_hacks/models/forecast_chart_bar.dart';
 import 'package:backyard_hacks/service/city_aqi.dart';
@@ -17,6 +21,31 @@ class _CityInfoState extends State<CityInfo> {
     cityInfo = cityInfo.isNotEmpty
         ? cityInfo
         : ModalRoute.of(context)!.settings.arguments as Map;
+
+       Color color = Colors.white;
+       IconData face = FontAwesomeIcons.faceFrown;
+        int numval= 0;
+//color determiner
+    if(cityInfo['aqi'] > 20 && cityInfo['aqi']<50)  
+    {
+      color= Colors.yellow;
+      face = FontAwesomeIcons.faceMeh;
+      numval=2;
+    
+    }
+    if(cityInfo['aqi'] >= 50)
+    {
+      color= Colors.red;
+      face = FontAwesomeIcons.faceAngry;
+      numval=3;
+    }
+    if(cityInfo['aqi'] <= 20 )
+    {
+      color= Colors.green;
+      face = FontAwesomeIcons.faceSmile;
+      numval=1;
+    } 
+
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
@@ -48,15 +77,17 @@ class _CityInfoState extends State<CityInfo> {
             ),
           ),
           Card(
-            color: Colors.amber,
+            color: color,
             child: Column(
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.only(top: 10.0),
                 ),
-                const Icon(
+                Icon(
                   //change this dynamically
-                  FontAwesomeIcons.faceSmile,
+                  face,
+                  //FontAwesomeIcons.faceMeh,
+
                   color: Color.fromARGB(255, 255, 255, 255),
                   size: 100.0,
                 ),
