@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:backyard_hacks/models/forecast_chart_bar.dart';
 import 'package:backyard_hacks/service/city_aqi.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -46,16 +47,6 @@ class _CityInfoState extends State<CityInfo> {
                   ),
             ),
           ),
-          /*Card(
-            child: Container(
-              height: 200,
-              //show AQI, TODO: change color?
-              color: Colors.amber,
-              child: Text(
-                'AQI: ${cityInfo['aqi']}',
-              ),
-            ),
-          ),*/
           Card(
             color: Colors.amber,
             child: Column(
@@ -90,6 +81,93 @@ class _CityInfoState extends State<CityInfo> {
               child: Center(
                 child: Text('Updated ${cityInfo['time']}'),
               ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 20, bottom: 10),
+              child: Text(
+                'O3 levels',
+                style: TextStyle(
+                    fontSize: 15,
+                    background: Paint()
+                      ..strokeWidth = 20.0
+                      ..color = Color.fromARGB(255, 174, 174, 174)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
+              ),
+            ),
+          ),
+          Card(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: (cityInfo['o3_forecast'] as Map)
+                  .entries
+                  .map((entry) => Bar(
+                      entry.value,
+                      entry.value / 100.0,
+                      (entry.key).split('-')[1] +
+                          '/' +
+                          (entry.key).split('-')[2]))
+                  .toList(),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 20, bottom: 10),
+              child: Text(
+                'PM10 levels',
+                style: TextStyle(
+                    fontSize: 15,
+                    background: Paint()
+                      ..strokeWidth = 20.0
+                      ..color = Color.fromARGB(255, 174, 174, 174)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
+              ),
+            ),
+          ),
+          Card(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: (cityInfo['pm10_forecast'] as Map)
+                  .entries
+                  .map((entry) => Bar(
+                      entry.value,
+                      entry.value / 100.0,
+                      (entry.key).split('-')[1] +
+                          '/' +
+                          (entry.key).split('-')[2]))
+                  .toList(),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: EdgeInsets.only(top: 20, bottom: 10),
+              child: Text(
+                'PM2.5 levels',
+                style: TextStyle(
+                    fontSize: 15,
+                    background: Paint()
+                      ..strokeWidth = 20.0
+                      ..color = Color.fromARGB(255, 174, 174, 174)
+                      ..style = PaintingStyle.stroke
+                      ..strokeJoin = StrokeJoin.round),
+              ),
+            ),
+          ),
+          Card(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: (cityInfo['pm25_forecast'] as Map)
+                  .entries
+                  .map((entry) => Bar(
+                      entry.value,
+                      entry.value / 100.0,
+                      (entry.key).split('-')[1] +
+                          '/' +
+                          (entry.key).split('-')[2]))
+                  .toList(),
             ),
           ),
         ],
