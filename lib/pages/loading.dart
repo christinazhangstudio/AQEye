@@ -14,46 +14,6 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
   //asynchronous request
-  /*void getData() async {
-    //simulate network request for a username
-    // async and await is to have the next function ('a weird baby' return) consecutive from this one completing
-    // await means to "wait" for this to be done
-    //async and await are needed for dependent actions
-    /*String username = await Future.delayed(Duration(seconds: 3), () {
-      //print('cimp');
-      return 'cimp';
-    });
-    //simulate network request to get bio of username
-    String bio = await Future.delayed(Duration(seconds: 2), () {
-      return 'a weird baby';
-    });
-    print('$username - $bio');*/
-    //collect data from third party API
-    //await is wait for data to be gotten before storing into variable
-    /*Response response =
-        await get(Uri.parse('https://jsonplaceholder.typicode.com/todos/1'));
-    Map data = jsonDecode(response.body);
-    print(data);
-    print(data['title']);*/
-    //using WorldTimeAPI
-    //make the request
-    /*Response response = await get(
-        Uri.parse('http://worldtimeapi.org/api/timezone/Europe/London'));
-    Map data = jsonDecode(response.body);
-    //print(data);
-    //get properties from data
-    String datetime = data['datetime'];
-    String offset = data['utc_offset'].substring(1, 3);
-    //print(datetime);
-    //print(offset);
-    //create DateTime object
-    DateTime now = DateTime.parse(datetime);
-    now = now.add(Duration(hours: int.parse(offset)));
-    print(now);*/
-    //extracting this logic to world_time.dart...
-  }
-  */
-
   void setupCityAQI(Map argsFromMapScreen) async {
     CityAQI instance = CityAQI(city: argsFromMapScreen['city']);
 
