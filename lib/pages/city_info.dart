@@ -22,29 +22,25 @@ class _CityInfoState extends State<CityInfo> {
         ? cityInfo
         : ModalRoute.of(context)!.settings.arguments as Map;
 
-       Color color = Colors.white;
-       IconData face = FontAwesomeIcons.faceFrown;
-        int numval= 0;
+    Color color = Colors.white;
+    IconData face = FontAwesomeIcons.faceFrown;
+    int numval = 0;
 //color determiner
-    if(cityInfo['aqi'] > 20 && cityInfo['aqi']<50)  
-    {
-      color= Colors.yellow;
+    if (cityInfo['aqi'] > 20 && cityInfo['aqi'] < 50) {
+      color = Colors.yellow;
       face = FontAwesomeIcons.faceMeh;
-      numval=2;
-    
+      numval = 2;
     }
-    if(cityInfo['aqi'] >= 50)
-    {
-      color= Colors.red;
+    if (cityInfo['aqi'] >= 50) {
+      color = Colors.red;
       face = FontAwesomeIcons.faceAngry;
-      numval=3;
+      numval = 3;
     }
-    if(cityInfo['aqi'] <= 20 )
-    {
-      color= Colors.green;
+    if (cityInfo['aqi'] <= 20) {
+      color = Colors.green;
       face = FontAwesomeIcons.faceSmile;
-      numval=1;
-    } 
+      numval = 1;
+    }
 
     return Scaffold(
       backgroundColor: Colors.grey[200],
@@ -55,7 +51,7 @@ class _CityInfoState extends State<CityInfo> {
               //return to map screen
               Navigator.pop(context);
             }),
-        backgroundColor: Colors.blue[900],
+        backgroundColor: Color.fromARGB(255, 16, 137, 146),
         title: Text('City AQI Data'),
         centerTitle: true,
         elevation: 0,
@@ -66,15 +62,15 @@ class _CityInfoState extends State<CityInfo> {
         children: <Widget>[
           Card(
             child: ListTile(
-              //show AQI
-              title: Text(
-                cityInfo['city'],
-              ),
-              leading: const CircleAvatar(
-                  //backgroundImage:
-                  //    AssetImage('assets/${locations[index].flag}'),
-                  ),
-            ),
+                //show AQI
+                title: Text(
+                  cityInfo['city'],
+                  style: TextStyle(fontSize: 30),
+                ),
+                leading: const Icon(
+                  FontAwesomeIcons.city,
+                  color: Color.fromARGB(255, 16, 137, 146),
+                )),
           ),
           Card(
             color: color,
